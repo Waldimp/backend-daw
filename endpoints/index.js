@@ -5,5 +5,6 @@ router.use('/autores', require('./autores'));
 router.use('/coleccion', require('./coleccion'));
 router.use('/libros', require('./libros'));
 router.use('/librosdeseados', require('./librosdeseados'));
+router.use('/project', require('./project'));
 
 module.exports = router;
