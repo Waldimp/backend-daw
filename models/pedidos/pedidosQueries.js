@@ -1,10 +1,10 @@
 module.exports = {
 
     //getters
-    obtenerPedidos: `SELECT id, cliente, fecha, subTotal, precioFinal,
+    obtenerPedidos: `SELECT id, cliente, fecha, subTotal, servicios, precioFinal,
      (SELECT COUNT(*) FROM solicitudes where idPedido = id) as items FROM pedido `,
 
-     obtenerPedidoPorId: `SELECT id, cliente, fecha, subTotal, precioFinal,
+     obtenerPedidoPorId: `SELECT id, cliente, fecha, subTotal, servicios, precioFinal,
      (SELECT COUNT(*) FROM solicitudes where idPedido = id) as items FROM pedido WHERE id = ?`,
 
     obtenerSolicitudesPorIdPedido: `SELECT l.idSolicitud, l.idPedido, l.idProducto, l.cantidad, l.subTotal, l.fotos, a.nombre, a.precio
@@ -21,7 +21,7 @@ module.exports = {
 
 
     //updates
-    editarPedido: `UPDATE pedido SET subTotal = ?, precioFinal = ? WHERE id = ?`,
+    editarPedido: `UPDATE pedido SET subTotal = ?, servicios = ?, precioFinal = ? WHERE id = ?`,
 
     //delete
     eliminarSolicitud: `DELETE FROM solicitudes WHERE idSolicitud = ?`,
